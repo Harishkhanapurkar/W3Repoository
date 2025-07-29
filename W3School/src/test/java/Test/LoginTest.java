@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import Base.BaseClass;
 //import PageObject.Homepage_Search;
 import PageObject.LoginPage;
+import PageObject.SearchDropDownselect;
 //import PageObject.Tutorial;
 import Utilities.ReadConfig;
 
@@ -26,10 +27,15 @@ public class LoginTest extends BaseClass {
 		Thread.sleep(3000);
 		lp.navigationLogin();
 		
-	
+		//
+		SearchDropDownselect sp = new SearchDropDownselect(driver);
+		sp.scrolldown();
+		sp.searchAndClickFourthOption();
+		Thread.sleep(5000);
+		sp.navLogin();
+		Thread.sleep(2000);
+		
 	}
-	
-
 	@DataProvider(name = "loginData")
 	public Object[][] loginData() throws IOException {
 		ReadConfig config = new ReadConfig();
