@@ -12,7 +12,11 @@ import PageObject.GetCertified;
 
 //import PageObject.Homepage_Search;
 import PageObject.LoginPage;
+
+import PageObject.Tutorial;
+
 import PageObject.LogoutPage;
+
 //import PageObject.Tutorial;
 import Utilities.ReadConfig;
 
@@ -80,6 +84,14 @@ public class LoginTest extends BaseClass {
 		gc.clickoption();
 		Thread.sleep(6000);
 		
+
+		//mohini
+		Tutorial t=new Tutorial(driver); ///this is for tutorial page
+		t.clickOnTutorialLink();
+		t.SelectOnelink();
+		t.navigationLogin();
+	
+
 	}
 	
 
