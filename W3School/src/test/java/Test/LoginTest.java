@@ -6,6 +6,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import Base.BaseClass;
+import PageObject.GetCertified;
 //import PageObject.Homepage_Search;
 import PageObject.LoginPage;
 //import PageObject.Tutorial;
@@ -25,6 +26,20 @@ public class LoginTest extends BaseClass {
 		lp.closePopupIfPresent();
 		Thread.sleep(3000);
 		lp.navigationLogin();
+		
+		//Anandi GetCertified 
+		
+		GetCertified gc = new GetCertified(driver);
+		gc.clickgetcertified();
+		Thread.sleep(2000);
+		gc.scrolldown();
+		Thread.sleep(1000);
+		gc.clickaddtocart();
+		Thread.sleep(2000);
+		gc.clickremove();
+		Thread.sleep(5000);
+		gc.clickoption();
+		Thread.sleep(6000);
 		
 	
 	}
