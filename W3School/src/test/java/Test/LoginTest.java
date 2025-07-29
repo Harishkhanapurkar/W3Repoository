@@ -17,10 +17,13 @@ import PageObject.GetCertified;
 //import PageObject.Homepage_Search;
 import PageObject.LoginPage;
 
+import PageObject.SearchDropDownselect;
+
 import PageObject.Tutorial;
 
 import PageObject.LogoutPage;
 
+ 
 //import PageObject.Tutorial;
 import Utilities.ReadConfig;
 
@@ -89,6 +92,17 @@ public class LoginTest extends BaseClass {
 
 		
 
+		//
+		SearchDropDownselect sp = new SearchDropDownselect(driver);
+		sp.scrolldown();
+		sp.searchAndClickFourthOption();
+		Thread.sleep(5000);
+		sp.navLogin();
+		Thread.sleep(2000);
+		
+	}
+
+
 		// Sachin 
 		jp.clickTopNavJava();
 		Thread.sleep(2000);
@@ -123,7 +137,9 @@ public class LoginTest extends BaseClass {
 	
 
 
+
 	}
+
 
 	@DataProvider(name = "loginData")
 	public Object[][] loginData() throws IOException {
