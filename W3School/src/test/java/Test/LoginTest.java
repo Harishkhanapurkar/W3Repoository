@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import Base.BaseClass;
 //import PageObject.Homepage_Search;
 import PageObject.LoginPage;
+import PageObject.Tutorial;
 //import PageObject.Tutorial;
 import Utilities.ReadConfig;
 
@@ -26,6 +27,11 @@ public class LoginTest extends BaseClass {
 		Thread.sleep(3000);
 		lp.navigationLogin();
 		
+		//mohini
+		Tutorial t=new Tutorial(driver); ///this is for tutorial page
+		t.clickOnTutorialLink();
+		t.SelectOnelink();
+		t.navigationLogin();
 	
 	}
 	
