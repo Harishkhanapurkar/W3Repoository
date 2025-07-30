@@ -11,13 +11,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LogoutPage {
-
-	WebDriver driver;
+public class LogoutPage extends GetCertified {
 
 	public LogoutPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(driver);
+
 	}
 
 	@FindBy(xpath = "//div[@class='user-profile-picture']")

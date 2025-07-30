@@ -40,6 +40,9 @@ public class ReadConfig {
 	 public  String getSearchData() {
 		 return prop.getProperty("serarchData");
 	 }
+	 public  String getData() {
+		 return prop.getProperty("searchjava");
+	 }
 }
 
 
