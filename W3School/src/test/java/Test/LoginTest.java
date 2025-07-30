@@ -7,12 +7,10 @@ import org.testng.annotations.Test;
 import Base.BaseClass;
 
 import PageObject.HomePage_Services;
-
-
+import PageObject.Homepage_Search;
 import PageObject.JavaPage;
 
 import PageObject.GetCertified;
-
 
 //import PageObject.Homepage_Search;
 import PageObject.LoginPage;
@@ -23,7 +21,6 @@ import PageObject.Tutorial;
 
 import PageObject.LogoutPage;
 
- 
 //import PageObject.Tutorial;
 import Utilities.ReadConfig;
 
@@ -31,19 +28,15 @@ public class LoginTest extends BaseClass {
 	LoginPage lp;
 	JavaPage jp;
 
-
 	@Test(priority = 0, dataProvider = "loginData")
-	public void SignInDetail(String emailid, String password) throws InterruptedException {
+	public void SignInDetail(String emailid, String password, String value) throws InterruptedException {
 
 		lp = new LoginPage(driver); // this is for login page
 
-
 		lp = new LoginPage(driver); // this is for login page
 
-		lp = new LoginPage(driver); //this is for login page
+		lp = new LoginPage(driver); // this is for login page
 		jp = new JavaPage(driver);
-
-
 
 		lp.clickOnSignInbtn();
 		lp.enterEmailId(emailid);
@@ -54,6 +47,37 @@ public class LoginTest extends BaseClass {
 		Thread.sleep(3000);
 		lp.navigationLogin();
 
+		// isha suvarna nimal
+		SearchDropDownselect sp = new SearchDropDownselect(driver);
+		sp.scrolldown();
+		sp.searchAndClickFourthOption();
+		Thread.sleep(5000);
+		sp.navLogin();
+		Thread.sleep(1000);
+
+		// mohini
+		Tutorial t = new Tutorial(driver); /// this is for tutorial page
+		Thread.sleep(2000);
+		t.clickOnTutorialLink();
+		Thread.sleep(2000);
+		t.SelectOnelink();
+		t.navigationLogin();
+		Thread.sleep(3000);
+
+		// Harish code
+		Homepage_Search s = new Homepage_Search(driver);
+		s.searchclick(value);
+		Thread.sleep(7000);
+		s.encapscroll();
+		Thread.sleep(4000);
+		s.clickonenc();
+		Thread.sleep(2000);
+		s.nextbtn();
+		Thread.sleep(2000);
+		s.previousbtn();
+		Thread.sleep(2000);
+		s.navigationLogin();
+		Thread.sleep(2000);
 
 		// VICKY'S CODE STARTED
 
@@ -76,6 +100,34 @@ public class LoginTest extends BaseClass {
 		hs.nextbtn();
 		hs.previousbtn();
 		hs.navigationLogin();
+		Thread.sleep(1000);
+
+		// Sachin
+		jp.clickTopNavJava();
+		Thread.sleep(2000);
+		jp.scrollToTryItAndClick();
+		Thread.sleep(5000);
+		jp.handleTryItWindowAndRun();
+		// jp.clickOnSignInbtn();
+		Thread.sleep(5000);
+		jp.navigationLogin();
+		Thread.sleep(1000);
+
+		// Anandi GetCertified
+
+//		GetCertified gc = new GetCertified(driver);
+//		gc.clickgetcertified();
+//		Thread.sleep(2000);
+//		gc.scrolldown();
+//		Thread.sleep(1000);
+//		gc.clickcsscourse();
+//		Thread.sleep(1000);
+//		gc.clickaddtocart();
+//		Thread.sleep(2000);
+//		gc.clickremove();
+//		Thread.sleep(5000);
+//		gc.clickoption();
+//		Thread.sleep(3000);
 
 		// Nikhil ----> Now logout
 
@@ -89,62 +141,10 @@ public class LoginTest extends BaseClass {
 
 	}
 
-
-		
-
-		//
-		SearchDropDownselect sp = new SearchDropDownselect(driver);
-		sp.scrolldown();
-		sp.searchAndClickFourthOption();
-		Thread.sleep(5000);
-		sp.navLogin();
-		Thread.sleep(2000);
-		
-	}
-
-
-		// Sachin 
-		jp.clickTopNavJava();
-		Thread.sleep(2000);
-		jp.scrollToTryItAndClick();
-		Thread.sleep(5000);
-		jp.handleTryItWindowAndRun();
-		//jp.clickOnSignInbtn();
-		Thread.sleep(5000);
-		jp.navigationLogin();
-
-
-		//Anandi GetCertified 
-		
-		GetCertified gc = new GetCertified(driver);
-		gc.clickgetcertified();
-		Thread.sleep(2000);
-		gc.scrolldown();
-		Thread.sleep(1000);
-		gc.clickaddtocart();
-		Thread.sleep(2000);
-		gc.clickremove();
-		Thread.sleep(5000);
-		gc.clickoption();
-		Thread.sleep(6000);
-		
-
-		//mohini
-		Tutorial t=new Tutorial(driver); ///this is for tutorial page
-		t.clickOnTutorialLink();
-		t.SelectOnelink();
-		t.navigationLogin();
-	
-
-
-
-	}
-
-
 	@DataProvider(name = "loginData")
 	public Object[][] loginData() throws IOException {
 		ReadConfig config = new ReadConfig();
-		return new Object[][] { { config.getEmailId(), config.getPassword() } };
+		return new Object[][] { { config.getEmailId(), config.getPassword(), config.getData() } };
 
 	}
 

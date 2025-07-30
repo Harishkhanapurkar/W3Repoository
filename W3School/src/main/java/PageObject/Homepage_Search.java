@@ -2,43 +2,42 @@ package PageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class HomePage_Services extends Homepage_Search {
+public class Homepage_Search extends Tutorial {
 
-	public HomePage_Services(WebDriver driver) {
+	public Homepage_Search(WebDriver driver) {
 		super(driver);
 
 	}
 
-	@FindBy(xpath = "//*[@id=\"navbtn_services\"]")
-	WebElement services;
+	@FindBy(xpath = "//input[@id='tnb-google-search-input']")
+	WebElement searchbtn;
 
-	public void clickonservices() {
-		services.click();
+	public void searchclick(String sd) {
+		// searchbtn.click();
+		searchbtn.sendKeys(sd);
+		searchbtn.sendKeys(Keys.ENTER);
 	}
 
-	@FindBy(xpath = "//*[@id=\"services_list\"]/div[3]/div[1]/a/div")
-	WebElement freetutorials;
-
-	public void ftuturials() {
-		freetutorials.click();
+	public void encapscroll() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		WebElement scrollableDiv = driver.findElement(By.id("leftmenuinnerinner")); // Use your actual ID or selector
 
 		// Scroll the div 800 pixels down
-		js.executeScript("arguments[0].scrollTop = arguments[0].scrollTop + 800;", scrollableDiv);
-
+		js.executeScript("arguments[0].scrollTop = arguments[0].scrollTop + 900;", scrollableDiv);
 	}
 
-	@FindBy(xpath = "//*[@id=\"leftmenuinnerinner\"]/a[24]")
-	WebElement sql;
+	@FindBy(xpath = "//a[normalize-space()='Java Encapsulation']")
+	WebElement encapsulation;
 
-	public void clickonsql() {
-		sql.click();
+	public void clickonenc() {
+		encapsulation.click();
 	}
 
 	@FindBy(xpath = "//*[@id=\"main\"]/div[2]/a[2]")
