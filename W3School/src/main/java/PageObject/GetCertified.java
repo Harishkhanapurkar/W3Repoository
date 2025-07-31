@@ -25,30 +25,30 @@ public class GetCertified extends JavaPage {
 			driver.switchTo().window(winHandle);
 		}
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(0, 500)"); // Scroll to bottom
+		js.executeScript("window.scrollTo(0, 600)"); // Scroll to bottom
 		Thread.sleep(2000);
 	}
 
-	@FindBy(xpath = "//img[contains(@src, '50_86a0025a-1ac1-4a6a-b426-3af22ac15790')]\r\n")
-	WebElement clickoncsscourse;
+	@FindBy(xpath = "//a[@href='/en-in/collections/course-catalog/products/css-course' and .//img[contains(@src, '50_86a0025a')]]")
+	WebElement clickonlearncss;
 
-	public void clickcsscourse() throws InterruptedException {
-		clickoncsscourse.click();
-		Thread.sleep(3000);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(0, 200)"); // Scroll to bottom
-		Thread.sleep(2000);
-	
+	public void clicklearncss() throws InterruptedException {
+
+		clickonlearncss.click();
 	}
-	@FindBy(xpath = "//*[@id=\"product_form_4695230906425\"]/div[1]/div/button/span[1]")
+
+	@FindBy(xpath = "(//button[.//span[@class='atc-button--text' and normalize-space(.)='Add to Cart']])[1]")
 	WebElement clickonaddtocart;
-	public void clickaddtocart() throws InterruptedException
-	{
+
+	public void clickaddtocart() throws InterruptedException {
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0, 300)"); // Scroll to bottom
+		Thread.sleep(2000);
 		clickonaddtocart.click();
 		Thread.sleep(3000);
 	}
-	
-	
+
 	@FindBy(xpath = "//*[name()='svg' and contains(@class, 'icon-remove')]")
 	WebElement clickonremove;
 
@@ -56,7 +56,9 @@ public class GetCertified extends JavaPage {
 		clickonremove.click();
 		Thread.sleep(3000);
 		driver.navigate().back();
-		Thread.sleep(7000);
+		Thread.sleep(3000);
+		driver.navigate().back();
+		Thread.sleep(1000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0, -500);"); // Scrolls up by 300 pixels
 		Thread.sleep(2000);
@@ -67,6 +69,7 @@ public class GetCertified extends JavaPage {
 	WebElement searchoneoption;
 
 	public void clickoption() throws InterruptedException {
+
 		// Store the original window handle at the beginning
 		String originalWindow = driver.getWindowHandle();
 		// Create Select object
@@ -76,7 +79,7 @@ public class GetCertified extends JavaPage {
 		select.selectByIndex(3); // 0 - Featured, 1 - Best selling, 2 - A-Z, 3 - Z-A
 		Thread.sleep(3000);
 
-		// ... (some code that opens new window/tab and switches to it)
+		// some code that opens new window/tab and switches to it
 
 		// Close original window
 		driver.switchTo().window(originalWindow).close();
@@ -89,7 +92,5 @@ public class GetCertified extends JavaPage {
 			driver.switchTo().window(handle);
 			break;
 		}
-
 	}
-
 }
