@@ -5,6 +5,7 @@
     <classes>
       <class name="Test.LoginTest"/>
       <class name="Test.NewTest"/>
+       <class name="Test.TestClass"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
