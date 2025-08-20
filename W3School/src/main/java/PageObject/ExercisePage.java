@@ -40,7 +40,7 @@ public class ExercisePage extends SearchDropDownselect {
     public void BackToOriginal() {
 		// driver.get("https://www.w3schools.com/");
 		driver.navigate().to("https://www.w3schools.com/");
-        System.out.println("Exercise page validate succesfully");
+        System.out.println("Exercise page validate succesfully..");
 	}
     
 	

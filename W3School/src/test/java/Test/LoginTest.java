@@ -143,7 +143,7 @@ public class LoginTest extends BaseClass {
 			exerCise.clickOnExerciseLink();
 			Thread.sleep(2000);
 			exerCise.scrollToBottom();
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 			exerCise.ClickBtn();
 			Thread.sleep(3000);
 			exerCise.BackToOriginal();;
