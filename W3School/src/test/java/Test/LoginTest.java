@@ -1,6 +1,9 @@
 package Test;
 
 import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -9,7 +12,7 @@ import Base.BaseClass;
 import PageObject.HomePage_Services;
 import PageObject.Homepage_Search;
 import PageObject.JavaPage;
-
+import PageObject.ExercisePage;
 import PageObject.GetCertified;
 
 //import PageObject.Homepage_Search;
@@ -130,6 +133,22 @@ public class LoginTest extends BaseClass {
 //		Thread.sleep(2000);
 //		
 		
+		
+		
+		
+        //Akshay-----> Exercise Page
+		
+		 ExercisePage exerCise=new ExercisePage(driver);
+		 Thread.sleep(2000);
+			exerCise.clickOnExerciseLink();
+			Thread.sleep(2000);
+			exerCise.scrollToBottom();
+			Thread.sleep(5000);
+			exerCise.ClickBtn();
+			Thread.sleep(3000);
+			exerCise.BackToOriginal();;
+			
+		
 		// Nikhil ----> Now logout
 
 		LogoutPage logout = new LogoutPage(driver);
@@ -148,5 +167,8 @@ public class LoginTest extends BaseClass {
 		return new Object[][] { { config.getEmailId(), config.getPassword(), config.getData() } };
 
 	}
+	
+	
+	 
 
 }
