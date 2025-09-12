@@ -133,6 +133,23 @@ public class LoginTest extends BaseClass {
 		ft.clickfortearchers();
 		ft.nevilogin();
 
+=======
+//		GetCertified gc = new GetCertified(driver);
+//		gc.clickgetcertified();
+//		Thread.sleep(2000);
+//		gc.scrolldown();
+//		Thread.sleep(1000);
+//		gc.clicklearncss();
+//		Thread.sleep(2000);
+//		gc.clickaddtocart();
+//		Thread.sleep(2000);
+//		gc.clickremove();
+//		Thread.sleep(5000);
+//		gc.clickoption();
+//		Thread.sleep(2000);
+//		
+		
+
 		// Nikhil ----> Now logout
 
 		LogoutPage logout = new LogoutPage(driver);
