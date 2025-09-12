@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class GetCertified extends JavaPage {
+public class GetCertified extends SearchDropDownselect {
 
 	public GetCertified(WebDriver driver) {
 		super(driver);

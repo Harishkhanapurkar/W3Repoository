@@ -9,7 +9,7 @@ import Base.BaseClass;
 import PageObject.HomePage_Services;
 import PageObject.Homepage_Search;
 import PageObject.JavaPage;
-
+import PageObject.ForTeachers;
 import PageObject.GetCertified;
 
 //import PageObject.Homepage_Search;
@@ -115,6 +115,25 @@ public class LoginTest extends BaseClass {
 
 		// Anandi GetCertified
 
+		GetCertified gc = new GetCertified(driver);
+		gc.clickgetcertified();
+		Thread.sleep(2000);
+		gc.scrolldown();
+		Thread.sleep(1000);
+		gc.clicklearncss();
+		Thread.sleep(2000);
+		gc.clickaddtocart();
+		Thread.sleep(2000);
+		gc.clickremove();
+		Thread.sleep(5000);
+		gc.clickoption();
+		Thread.sleep(2000);
+		
+		ForTeachers ft = new ForTeachers(driver);
+		ft.clickfortearchers();
+		ft.nevilogin();
+
+=======
 //		GetCertified gc = new GetCertified(driver);
 //		gc.clickgetcertified();
 //		Thread.sleep(2000);
@@ -130,6 +149,7 @@ public class LoginTest extends BaseClass {
 //		Thread.sleep(2000);
 //		
 		
+
 		// Nikhil ----> Now logout
 
 		LogoutPage logout = new LogoutPage(driver);
