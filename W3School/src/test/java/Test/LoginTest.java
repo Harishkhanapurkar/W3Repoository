@@ -9,7 +9,7 @@ import Base.BaseClass;
 import PageObject.HomePage_Services;
 import PageObject.Homepage_Search;
 import PageObject.JavaPage;
-
+import PageObject.ForTeachers;
 import PageObject.GetCertified;
 
 //import PageObject.Homepage_Search;
@@ -128,6 +128,10 @@ public class LoginTest extends BaseClass {
 		Thread.sleep(5000);
 		gc.clickoption();
 		Thread.sleep(2000);
+		
+		ForTeachers ft = new ForTeachers(driver);
+		ft.clickfortearchers();
+		ft.nevilogin();
 
 		// Nikhil ----> Now logout
 
